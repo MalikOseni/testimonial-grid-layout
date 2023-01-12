@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+:root{
+    --violet:hsl(263, 55%, 52%);
+    --Verydarkgrayishblue: hsl(217, 19%, 35%);
+    --Verydarkblackishblue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Lightgray: hsl(0, 0%, 81%);
+    --Lightgrayishblue: hsl(210, 46%, 95%);
+    --fs:13px;
+    --fwB:600;
+    --fwL:500;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Barlow Semi Condensed',
+        sans-serif;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        font-size: var(--fs);
+        text-rendering: optimizeSpeed;
+        line-height: 1.5;
+}
+h2{
+    font-size: var(--fs);
+    margin: 0;
+    font-weight: var(--fwB);
+}
+.container-grid{
+    padding-block: 2em;
+    width: min(90%, 75rem);
+    margin-inline: auto;
+    grid-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.testimonial.quote{
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-position: top right 10%;
+    background-repeat: no-repeat;
+}
+.left{
+    border: 2px solid white;
+    position: relative;
+    height: 50px;
+    border-radius: 50%;
+}
+.left img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.top{
+    display: flex;
+    gap: var(--gap,1em);
+    align-items: center;
+}
+.bg-pry-400{
+    background: var(--violet);
+}
+.bry-secondary-400{
+    background: var(--Verydarkgrayishblue);
+}
+.bry-secondary-500{
+    background: var(--Verydarkblackishblue);
+}
+.testimonial{
+    padding: 2.1em;
+    box-shadow:  0 0 5px var(--Lightgray);
+    border-radius: 10px;
+}
+.text{
+    color: var(--White);
+}
+.testimonial >p:first-of-type{
+    /* background-color: red; */
+    font-size: 18px;
+    font-weight: var(--fwB);
+    /* margin: 0 0 1em 0; */
+    padding: 8px;
+    padding-top: 0;
+    padding-left: 0;
+    line-height: 1.2;
+}
+.testimonial >p:last-of-type{
+    opacity: .3;
+}
+@media  (min-width:900px) {
+    .container-grid{
+        grid-template-columns: repeat(4,1fr);
+    }
+        .grid-col-span{
+        grid-column: span 2;
+    }
+        .testimonial:nth-child(3){
+        grid-row: 2;
+    }
+    .testimonial:nth-child(5){
+        grid-row: 1 /span 2;
+        grid-column: 4;
+    }
+}
